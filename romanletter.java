@@ -12,7 +12,7 @@ public class romanletter {
         
     }
     final static char symbol[] = {'M','D','C','L','X','V','I'};
-	final static int   value[] = {1000,500,100,50,10,5,1};
+	final static int   value[] = {10000,5000,1000,500,100,50,10,1};
 
 	public static int valueOf(String roman)
 	{
@@ -27,20 +27,20 @@ public class romanletter {
 		throw new IllegalArgumentException("Invalid Roman Symbol.");
 	}
 
-	private static int[]    numbers = { 1000,  900,  500,  400,  100,   90,  
-		50,   40,   10,    9,    5,    4,    1 };
+	private static int[]    numbers = { 10000,  9000,  5000,  4000,  1000,   900,  
+		500,   400,   100,    90,    50,    40,    10,  1 };
 
 	private static String[] letters = { "M",  "CM",  "D",  "CD", "C",  "XC",
 		"L",  "XL",  "X",  "IX", "V",  "IV", "I" };
 
 
-	public static String convertToRoman(int N)
+	public static String convertToRoman(int H)
 	{
 		String roman = "";
 		for (int i = 0; i < numbers.length; i++) {
-			while (N >= numbers[i]) {
+			while (H >= numbers[i]) {
 				roman += letters[i];
-				N -= numbers[i];
+				H -= numbers[i];
 			}
 		}
 		return roman;
